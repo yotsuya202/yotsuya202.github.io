@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>四家秀治 | フリーアナウンサー</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;600;700&family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0D2340;
+      --navy-mid: #1A3A5C;
+      --blue: #1A5FA8;
+      --blue-bright: #2979D4;
+      --accent: #E8A020;
+      --accent-light: #FFF0D0;
+      --text-dark: #0D1F35;
+      --text-mid: #3A5068;
+      --text-light: #7A95AC;
+      --bg: #F5F8FC;
+      --white: #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text-dark);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 56px;
+      height: 64px;
+      background: var(--navy);
+    }
+
+    .nav-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.1em;
+    }
+
+    .nav-logo span {
+      color: var(--accent);
+      margin-right: 10px;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0;
+      list-style: none;
+    }
+
+    .nav-links li { position: relative; }
+
+    .nav-links a {
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 0 22px;
+      height: 64px;
+      justify-content: center;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.25s;
+    }
+
+    .nav-links a .nav-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.25s;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .nav-links a .nav-ja {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      transition: color 0.25s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 22px; right: 22px;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover .nav-en { opacity: 1; }
+    .nav-links a:hover .nav-ja { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, #1A3A6A 100%);
+      display: flex;
+      align-items: center;
+      padding: 100px 56px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 60%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='300' cy='300' r='280' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='60'/%3E%3Ccircle cx='300' cy='300' r='180' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='40'/%3E%3Ccircle cx='300' cy='300' r='80' fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='20'/%3E%3C/svg%3E") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 0;
+      height: 80px;
+      background: var(--bg);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: var(--accent);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      padding: 5px 16px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    .hero-tag::before {
+      content: '●';
+      font-size: 0.5rem;
+      animation: blink 1.5s infinite;
+    }
+
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    .hero-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: 0.06em;
+      margin-bottom: 10px;
+    }
+
+    .hero-name-en {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.38);
+      letter-spacing: 0.4em;
+      margin-bottom: 28px;
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.72);
+      max-width: 460px;
+      margin-bottom: 16px;
+      line-height: 2;
+    }
+
+    .hero-spec {
+      display: flex;
+      gap: 28px;
+      margin-top: 32px;
+      margin-bottom: 40px;
+    }
+
+    .spec-item { text-align: center; }
+
+    .spec-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .spec-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.1em;
+      margin-top: 4px;
+    }
+
+    .hero-divider {
+      width: 1px;
+      height: 40px;
+      background: rgba(255,255,255,0.15);
+      align-self: center;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--navy);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .hero-btn:hover {
+      background: #f0b030;
+      transform: translateY(-2px);
+    }
+
+    .hero-photo-col {
+      display: flex;
+      justify-content: center;
+    }
+
+    .photo-wrap { position: relative; width: 340px; }
+
+    .photo-frame {
+      width: 340px;
+      height: 420px;
+      background: linear-gradient(160deg, #1E4A80, #2979D4);
+      border-radius: 8px;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .photo-frame img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .photo-frame::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--accent);
+      z-index: 2;
+    }
+
+    .career-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 12px 20px;
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      line-height: 1.5;
+    }
+
+    .career-badge strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+    }
+
+    /* ===== SECTIONS COMMON ===== */
+    section { padding: 100px 56px; }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-eyebrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.36em;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::after {
+      content: '';
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 56px;
+    }
+
+    /* ===== PROFILE ===== */
+    #profile { background: var(--white); }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .profile-lead {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+      line-height: 2;
+      border-left: 4px solid var(--accent);
+      padding-left: 20px;
+    }
+
+    .profile-body {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 2;
+    }
+
+    .profile-body p { margin-bottom: 16px; }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+
+    .tag {
+      background: #EFF4FB;
+      color: var(--blue);
+      border: 1px solid #C8D8EE;
+      padding: 6px 18px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .info-table tr { border-bottom: 1px solid #EAF0F8; }
+    .info-table tr:first-child { border-top: 1px solid #EAF0F8; }
+
+    .info-table th {
+      width: 110px;
+      padding: 16px 0;
+      text-align: left;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: 0.05em;
+      vertical-align: top;
+    }
+
+    .info-table td {
+      padding: 16px 0;
+      font-size: 0.92rem;
+      color: var(--text-mid);
+    }
+
+    /* ===== CAREER ===== */
+    #career { background: var(--bg); }
+
+    .timeline {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8px; bottom: 8px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--blue));
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -39px; top: 7px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--accent);
+    }
+
+    .timeline-year {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .timeline-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+
+    .timeline-desc {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    /* ===== WORKS ===== */
+    #works { background: var(--white); }
+
+    .works-category { margin-bottom: 56px; }
+    .works-category:last-child { margin-bottom: 0; }
+
+    .cat-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--white);
+      background: var(--navy-mid);
+      padding: 6px 20px;
+      border-radius: 4px;
+      margin-bottom: 24px;
+    }
+
+    .works-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .work-card {
+      background: var(--bg);
+      border-radius: 8px;
+      padding: 20px 22px;
+      border-left: 3px solid var(--blue-bright);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .work-card:hover {
+      box-shadow: 0 8px 24px rgba(26,95,168,0.12);
+      transform: translateY(-2px);
+    }
+
+    .work-card.highlight { border-left-color: var(--accent); }
+
+    .work-prog {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .work-detail {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ===== CONTACT ===== */
+    #contact { background: var(--navy); }
+
+    #contact .section-eyebrow { color: var(--accent); }
+    #contact .section-title { color: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-desc {
+      font-size: 0.97rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 2;
+      margin-bottom: 32px;
+    }
+
+    .contact-agency {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+
+    .agency-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .agency-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .agency-url {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .contact-info-list { list-style: none; }
+
+    .contact-info-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.9rem;
+    }
+
+    .ci-icon {
+      font-size: 1.2rem;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    .ci-text { color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+    .ci-text strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #070F1A;
+      padding: 28px 56px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-copy {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.25);
+      letter-spacing: 0.1em;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav { padding: 0 20px; }
+      .nav-links { gap: 0; }
+      .nav-links a { padding: 0 12px; }
+      section { padding: 72px 20px; }
+      .hero { padding: 90px 20px 60px; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-name { font-size: 2.6rem; }
+      .hero-photo-col { order: -1; }
+      .photo-frame { width: 260px; height: 320px; }
+      .photo-wrap { width: 260px; }
+      .profile-grid { grid-template-columns: 1fr; }
+      .works-list { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      footer { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAV ===== -->
+<nav>
+  <div class="nav-logo">
+    <span>ANNOUNCER</span>四家秀治
+  </div>
+  <ul class="nav-links">
+    <li>
+      <a href="#profile">
+        <span class="nav-en">Profile</span>
+        <span class="nav-ja">プロフィール</span>
+      </a>
+    </li>
+    <li>
+      <a href="#career">
+        <span class="nav-en">Career</span>
+        <span class="nav-ja">経歴</span>
+      </a>
+    </li>
+    <li>
+      <a href="#works">
+        <span class="nav-en">Works</span>
+        <span class="nav-ja">お仕事実績</span>
+      </a>
+    </li>
+    <li>
+      <a href="#request">
+        <span class="nav-en">Request</span>
+        <span class="nav-ja">お仕事依頼</span>
+      </a>
+    </li>
+    <li>
+      <a href="#contact">
+        <span class="nav-en">Contact</span>
+        <span class="nav-ja">お問い合わせ</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">FREE ANNOUNCER</div>
+      <h1 class="hero-name">四家 秀治</h1>
+      <p class="hero-name-en">YOTSUYA  HIDEHARU</p>
+      <p class="hero-desc">
+        RKB毎日放送・テレビ東京を経て、フリーアナウンサーとして活躍。<br>
+        プロ野球・ラグビー・サッカーをはじめ多彩なスポーツ実況で<br>
+        40年以上にわたりスポーツの感動を伝え続ける。
+      </p>
+      <div class="hero-spec">
+        <div class="spec-item">
+          <div class="spec-num">40<span style="font-size:1.2rem">+</span></div>
+          <div class="spec-label">年のキャリア</div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="spec-item">
+          <div class="spec-num">22<span style="font-size:1.2rem">+</span></div>
+          <div class="spec-label">競技種目</div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="spec-item">
+          <div class="spec-num">2000</div>
+          <div class="spec-label">五輪実況</div>
+        </div>
+      </div>
+      <a href="#works" class="hero-btn">▶ 実績を見る</a>
+    </div>
+    <div class="hero-photo-col">
+      <div class="photo-wrap">
+        <div class="photo-frame">
+          <img src="yotsuya_picture_1.jpeg" alt="四家秀治" />
+        </div>
+        <div class="career-badge">
+          <strong>40+</strong>
+          Years Career
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROFILE ===== -->
+<section id="profile">
+  <div class="section-inner">
+    <p class="section-eyebrow">Profile</p>
+    <h2 class="section-title">プロフィール</h2>
+    <div class="profile-grid">
+      <div>
+        <p class="profile-lead">
+          スポーツの熱量を言葉に変える。<br>40年以上の現場経験が培った「伝える力」。
+        </p>
+        <div class="profile-body">
+          <p>千葉県松戸市出身。同志社大学在学中は体育会機関紙でラグビー取材に携わり、スポーツへの深い愛情を育む。</p>
+          <p>RKB毎日放送を経てテレビ東京に入社。ラグビー・プロ野球・ソフトボール・陸上競技・中央競馬・ボクシング・ボウリングなど、多岐にわたるスポーツ実況を担当。2000年のシドニーオリンピックではジャパンコンソーシアムを通じて実況を務めた。</p>
+          <p>2011年にフリーに転向後も、豊富な経験と確かな実況力を武器に第一線で活躍中。</p>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">プロ野球実況</span>
+          <span class="tag">メジャーリーグ実況</span>
+          <span class="tag">高校野球実況</span>
+          <span class="tag">ラグビー実況</span>
+          <span class="tag">サッカー実況</span>
+          <span class="tag">高校サッカー実況</span>
+          <span class="tag">オリンピック実況</span>
+          <span class="tag">国民スポーツ大会</span>
+          <span class="tag">陸上競技実況</span>
+          <span class="tag">スキージャンプ実況</span>
+          <span class="tag">ソフトボール実況</span>
+          <span class="tag">競馬実況</span>
+          <span class="tag">相撲実況</span>
+          <span class="tag">ボクシング実況</span>
+          <span class="tag">キックボクシング実況</span>
+          <span class="tag">プロレス実況</span>
+          <span class="tag">剣道実況</span>
+          <span class="tag">柔道実況</span>
+          <span class="tag">ボウリング実況</span>
+          <span class="tag">麻雀実況</span>
+          <span class="tag">健康麻将レッスンプロ</span>
+          <span class="tag">CM出演</span>
+          <span class="tag">ナレーション</span>
+          <span class="tag">スポーツライター</span>
+          <span class="tag">著書『西本阪急ブレーブス最強伝説』</span>
+          <span class="tag">著書『スポーツ実況の舞台裏』</span>
+          <span class="tag">著書『ぼくら昭和33年生まれ』</span>
+          <span class="tag">共著『ラグビー黒書』</span>
+          <span class="tag">共著『ラグビー名勝負伝』</span>
+          <span class="tag">共著『男泣きスタジアム』</span>
+          <span class="tag">共著『BOXING名勝負大全』</span>
+          <span class="tag">大学講座（聖徳大学）</span>
+          <span class="tag">バスケットボール実況</span>
+          <span class="tag">バレーボール実況</span>
+          <span class="tag">テニス実況</span>
+          <span class="tag">アメリカンフットボール実況</span>
+          <span class="tag">映画出演</span>
+          <span class="tag">ドラマ出演</span>
+        </div>
+      </div>
+      <div>
+        <table class="info-table">
+          <tr>
+            <th>生年月日</th>
+            <td>1958年8月18日</td>
+          </tr>
+          <tr>
+            <th>出身地</th>
+            <td>千葉県松戸市</td>
+          </tr>
+          <tr>
+            <th>血液型</th>
+            <td>AB型</td>
+          </tr>
+          <tr>
+            <th>身長</th>
+            <td>170cm</td>
+          </tr>
+          <tr>
+            <th>学歴</th>
+            <td>海城高等学校<br>同志社大学 工学部卒業</td>
+          </tr>
+          <tr>
+            <th>所属</th>
+            <td>フリーアナウンサー</td>
+          </tr>
+          <tr>
+            <th>趣味</th>
+            <td>麻雀・ボウリング</td>
+          </tr>
+          <tr>
+            <th>資格</th>
+            <td>日本健康麻将協会認定レッスンプロ</td>
+          </tr>
+          <tr>
+            <th>講座</th>
+            <td>聖徳大学<br>『感動を言葉で 〜スポーツ実況アナがその魅力を語る〜』（一般向け）</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CAREER ===== -->
+<section id="career">
+  <div class="section-inner">
+    <p class="section-eyebrow">Career</p>
+    <h2 class="section-title">経歴</h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <p class="timeline-year">University</p>
+        <h3 class="timeline-title">同志社大学 体育会機関紙『同志社スポーツ アトム』</h3>
+        <p class="timeline-desc">副編集長として、ラグビー、野球をはじめスポーツ全般の取材・報道に携わり、アナウンサーへの志を固める。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">1982 —</p>
+        <h3 class="timeline-title">RKB毎日放送 入社</h3>
+        <p class="timeline-desc">ラジオ番組やスポーツ中継を担当。放送の基礎を築く。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">1988 — 1989</p>
+        <h3 class="timeline-title">TBSビジョン 在籍</h3>
+        <p class="timeline-desc">テレビ埼玉『TVSライオンズアワー』でプロ野球実況を担当。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">1990 — 1994</p>
+        <h3 class="timeline-title">テレビ東京 契約社員アナウンサー</h3>
+        <p class="timeline-desc">多数のスポーツ中継を担当し、テレビ東京スポーツ実況の顔となる。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">1995 —</p>
+        <h3 class="timeline-title">テレビ東京 正社員アナウンサーとして入社</h3>
+        <p class="timeline-desc">プロ野球・ラグビー・サッカー・競馬・ボウリング・ボクシング・プロレスなど多ジャンルの実況を担当。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">2000</p>
+        <h3 class="timeline-title">シドニーオリンピック 実況</h3>
+        <p class="timeline-desc">ジャパンコンソーシアムを通じてシドニー五輪のテレビ中継実況を務める。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">2007 —</p>
+        <h3 class="timeline-title">テレビ東京 報道局へ異動</h3>
+        <p class="timeline-desc">教養番組『トコトンハテナ』のプロデューサーを担当。皇室担当特番の制作にも携わる。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">2008 —</p>
+        <h3 class="timeline-title">テレビ東京 スポーツ局へ異動</h3>
+        <p class="timeline-desc">スポーツ局に異動し、引き続き多彩なスポーツ中継・制作に携わる。</p>
+      </div>
+
+      <div class="timeline-item">
+        <p class="timeline-year">2011 — Present</p>
+        <h3 class="timeline-title">テレビ東京 退社・フリー転向</h3>
+        <p class="timeline-desc">フリーアナウンサーとして独立。精力的に活動を続けている。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WORKS ===== -->
+<section id="works">
+  <div class="section-inner">
+    <p class="section-eyebrow">Works</p>
+    <h2 class="section-title">お仕事実績</h2>
+
+    <div class="works-category">
+      <div class="cat-label">⚾ プロ野球</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">テレビ東京 プロ野球中継</p>
+          <p class="work-detail">主要試合の実況アナウンスを長年にわたり担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">テレビ埼玉「TVSライオンズアワー」</p>
+          <p class="work-detail">埼玉西武ライオンズ戦の実況担当（1988〜1989年）</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">tvk（テレビ神奈川）プロ野球中継</p>
+          <p class="work-detail">横浜DeNAベイスターズ戦の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">CSスポーツライブ＋ プロ野球中継</p>
+          <p class="work-detail">福岡ソフトバンクホークス戦の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">CS J SPORTS メジャーリーグ中継</p>
+          <p class="work-detail">CS J SPORTSにてMLBメジャーリーグ中継の実況を担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">🏉 ラグビー</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">テレビ東京 ラグビー中継</p>
+          <p class="work-detail">2003年のワールドカップ地上波独占中継を始め、国内外のラグビー主要試合の実況を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">WOWOW ラグビー中継</p>
+          <p class="work-detail">WOWOWにてラグビー中継の実況を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">CSテレ朝チャンネル ラグビー中継</p>
+          <p class="work-detail">CSテレ朝チャンネルにてラグビー中継の実況を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">テレビ埼玉 高校ラグビー中継</p>
+          <p class="work-detail">高校ラグビー大会のテレビ埼玉中継実況を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">ラグビー会場MC（場内実況）</p>
+          <p class="work-detail">ラグビー試合会場での場内アナウンス・MCを担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">⚽ サッカー</div>
+      <div class="works-list">
+        <div class="work-card">
+          <p class="work-prog">テレビ東京 サッカー中継</p>
+          <p class="work-detail">国内外のサッカー試合の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">高校サッカー中継（千葉テレビ）</p>
+          <p class="work-detail">全国高校サッカー選手権千葉県大会の実況担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">⚾ 高校野球</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">高校野球中継</p>
+          <p class="work-detail">甲子園をはじめとする高校野球大会の実況担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">🏅 オリンピック・国民スポーツ大会・国際大会</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">シドニーオリンピック（2000年）</p>
+          <p class="work-detail">ジャパンコンソーシアム経由でテレビ中継の実況を担当。日本中継史上に残る大舞台</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">国民スポーツ大会（旧・国民体育大会）</p>
+          <p class="work-detail">国体から名称変更された日本最大の総合スポーツ大会の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">陸上競技中継</p>
+          <p class="work-detail">国内外の陸上競技大会の実況担当</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">世界主要マラソン大会 現地実況</p>
+          <p class="work-detail">ボストン・ロンドン・シカゴなど世界の主要マラソン大会に現地入りし、計10回程度の実況を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">スキージャンプ中継</p>
+          <p class="work-detail">国内外のスキージャンプ大会の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">ソフトボール中継</p>
+          <p class="work-detail">国内ソフトボール大会の実況担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">🏯 相撲・格闘技・武道</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">明治神宮例祭奉祝全日本力士選士権大会 実況</p>
+          <p class="work-detail">テレビ東京が毎年中継していた同大会の実況を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">プロボクシング・プロレス実況</p>
+          <p class="work-detail">国内主要ボクシング・プロレス試合の実況</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">キックボクシング中継</p>
+          <p class="work-detail">国内キックボクシング主要大会の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">剣道中継</p>
+          <p class="work-detail">全国剣道大会・選手権の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">柔道中継</p>
+          <p class="work-detail">国内外の柔道大会・選手権の実況担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">🎯 その他競技</div>
+      <div class="works-list">
+        <div class="work-card">
+          <p class="work-prog">中央競馬中継</p>
+          <p class="work-detail">テレビ東京系列の競馬中継実況</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">ボウリング中継</p>
+          <p class="work-detail">プロボウリングツアーをはじめ、各種ボウリング大会の実況を多数担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">バスケットボール中継</p>
+          <p class="work-detail">国内バスケットボール大会の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">バレーボール中継</p>
+          <p class="work-detail">国内外のバレーボール大会の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">テニス中継</p>
+          <p class="work-detail">国内外のテニス大会の実況担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">アメリカンフットボール中継</p>
+          <p class="work-detail">国内アメリカンフットボール大会の実況担当</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">ボウリングマガジン ライター</p>
+          <p class="work-detail">日本のボウリング専門誌『ボウリングマガジン』にてライターとして執筆活動を担当</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">韓国ボウリング専門誌 ライター</p>
+          <p class="work-detail">韓国のボウリング専門雑誌にライターとして寄稿。国際的な執筆活動を展開</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">麻雀中継</p>
+          <p class="work-detail">プロ麻雀大会・麻雀番組の実況・進行担当</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">📚 著書</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">『西本阪急ブレーブス最強伝説』</p>
+          <p class="work-detail">言視舎 ／ 2013年1月刊　黄金期の阪急ブレーブスと名将・西本幸雄を描いた野球関連著書</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">『スポーツ実況の舞台裏』</p>
+          <p class="work-detail">彩流社 ／ 2016年4月刊　40年以上の実況経験をもとにスポーツ中継の現場を綴った一冊</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">『ぼくら昭和33年生まれ』</p>
+          <p class="work-detail">言視舎 ／ 2018年12月刊　昭和33年生まれの同世代と時代を振り返る</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">『ラグビー黒書』<span style="font-size:0.75rem;color:#7A95AC;margin-left:6px;">共著</span></p>
+          <p class="work-detail">双葉社 ／ 1995年12月刊　ラグビーの知られざる舞台裏に迫った共著</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">『ラグビー名勝負伝』<span style="font-size:0.75rem;color:#7A95AC;margin-left:6px;">共著</span></p>
+          <p class="work-detail">洋泉社 ／ 1996年2月刊　ラグビー史に残る名勝負を描いた共著</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">『男泣きスタジアム』<span style="font-size:0.75rem;color:#7A95AC;margin-left:6px;">共著</span></p>
+          <p class="work-detail">彩流社 ／ 2005年5月刊　プロ野球パ・リーグの、主に人気が無かった頃の歴史を綴った共著</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">『BOXING名勝負大全』<span style="font-size:0.75rem;color:#7A95AC;margin-left:6px;">共著</span></p>
+          <p class="work-detail">白夜書房 ／ 2012年12月刊　ボクシング史を彩る名勝負を収めた共著</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">🎓 講座・教育活動</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">聖徳大学 講座</p>
+          <p class="work-detail">『感動を言葉で 〜スポーツ実況アナがその魅力を語る〜』<br>一般向けの講座を担当。長年の実況・取材経験をもとにスポーツの魅力を幅広く伝える</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">🎬 映画・ドラマ出演</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">映画出演（レポーター役・アナウンサー役 他）</p>
+          <p class="work-detail">複数の映画作品にレポーター役・アナウンサー役などで出演。本業の経験を活かしたリアルな演技が評価される</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">ドラマ出演（レポーター役・アナウンサー役 他）</p>
+          <p class="work-detail">テレビドラマにレポーター役・アナウンサー役などで出演。多数の作品に参加</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="works-category">
+      <div class="cat-label">📺 CM・その他</div>
+      <div class="works-list">
+        <div class="work-card highlight">
+          <p class="work-prog">CM出演・ナレーション</p>
+          <p class="work-detail">テレビCM・企業PR動画等の出演・ナレーション担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">RKB毎日放送『サンデーポップショット』</p>
+          <p class="work-detail">九州ネットの音楽番組。レギュラー担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">RKB毎日放送『歌謡曲ヒット情報！』</p>
+          <p class="work-detail">レギュラー担当。連日来福する歌手へのインタビューを番組内で実施</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">RKB毎日放送『ほがらかサタデー』</p>
+          <p class="work-detail">ラジオレギュラー番組を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">RKB毎日放送『スマッシュ９卍がため』</p>
+          <p class="work-detail">ラジオレギュラー番組を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">RKB毎日放送 歌謡ショー 司会進行</p>
+          <p class="work-detail">RKB毎日放送主催の歌謡ショーにて司会進行を担当</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">教養番組『トコトンハテナ』プロデューサー</p>
+          <p class="work-detail">テレビ東京報道局所属時代に番組制作も担当（2007年〜）</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">皇室担当特番制作（テレビ東京）</p>
+          <p class="work-detail">報道局在籍時代に皇室関連特別番組の制作を担当</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">テレビ東京『中継王！』出演</p>
+          <p class="work-detail">テレビ東京の人気パブリシティ番組『中継王！』にレギュラー出演</p>
+        </div>
+        <div class="work-card highlight">
+          <p class="work-prog">テレビ東京『スポーツToday』出演</p>
+          <p class="work-detail">テレビ東京のスポーツニュース番組『スポーツToday』に出演</p>
+        </div>
+        <div class="work-card">
+          <p class="work-prog">各局バラエティ番組 スポーツ実況場面出演</p>
+          <p class="work-detail">テレビ各局のバラエティ番組においてスポーツ実況場面に多数出演</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== REQUEST ===== -->
+<section id="request" style="background: var(--bg);">
+  <div class="section-inner">
+    <p class="section-eyebrow">Request</p>
+    <h2 class="section-title">お仕事依頼</h2>
+    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:24px; margin-bottom:48px;">
+
+      <div style="background:var(--white); border-radius:12px; padding:32px 28px; border-top:4px solid var(--accent); box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="font-size:2rem; margin-bottom:16px;">🎙️</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:10px;">スポーツ実況</h3>
+        <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.9;">野球・ラグビー・サッカー・格闘技・マラソン・各種競技大会など、あらゆるスポーツ実況に対応します。</p>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; padding:32px 28px; border-top:4px solid var(--blue-bright); box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="font-size:2rem; margin-bottom:16px;">🎤</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:10px;">MC・司会進行</h3>
+        <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.9;">式典・表彰式・スポーツイベント・歌謡ショー・企業イベントなど各種司会・進行を承ります。</p>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; padding:32px 28px; border-top:4px solid #7A95AC; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="font-size:2rem; margin-bottom:16px;">🎧</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:10px;">ナレーション・CM</h3>
+        <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.9;">CM・企業PR・採用動画・ドキュメンタリー等のナレーション収録に対応します。</p>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; padding:32px 28px; border-top:4px solid var(--accent); box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="font-size:2rem; margin-bottom:16px;">📚</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:10px;">執筆・取材</h3>
+        <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.9;">スポーツ専門誌・書籍への執筆・取材・インタビュー記事など、ライターとしての活動も承ります。</p>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; padding:32px 28px; border-top:4px solid var(--blue-bright); box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="font-size:2rem; margin-bottom:16px;">🎬</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:10px;">映画・ドラマ出演</h3>
+        <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.9;">レポーター役・アナウンサー役・その他役での映画・ドラマへの出演依頼もお気軽にご相談ください。</p>
+      </div>
+
+      <div style="background:var(--white); border-radius:12px; padding:32px 28px; border-top:4px solid #7A95AC; box-shadow:0 4px 20px rgba(0,0,0,0.06);">
+        <div style="font-size:2rem; margin-bottom:16px;">🎓</div>
+        <h3 style="font-size:1rem; font-weight:700; color:var(--text-dark); margin-bottom:10px;">講演・講座</h3>
+        <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.9;">スポーツや実況・メディアをテーマにした講演・セミナー・大学講座など教育・文化活動のご依頼も歓迎します。</p>
+      </div>
+
+    </div>
+    <div style="text-align:center;">
+      <a href="#contact" style="display:inline-flex; align-items:center; gap:10px; background:var(--accent); color:var(--navy); text-decoration:none; padding:16px 40px; border-radius:4px; font-size:0.95rem; font-weight:700; letter-spacing:0.06em; transition:background 0.2s;">
+        お問い合わせフォームへ ▶
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-eyebrow">Contact</p>
+    <h2 class="section-title">お問い合わせ</h2>
+    <div class="contact-grid">
+      <div>
+        <p class="contact-desc">
+          お仕事のご依頼・ご相談はお気軽にどうぞ。スポーツ実況・ナレーション・MC・各種イベント等、幅広く対応いたします。
+        </p>
+      </div>
+      <ul class="contact-info-list">
+        <li>
+          <span class="ci-icon">🎙️</span>
+          <div class="ci-text">
+            <strong>SPORTS LIVE COMMENTARY</strong>
+            野球・ラグビー・サッカー・競馬・格闘技など各種スポーツ実況
+          </div>
+        </li>
+        <li>
+          <span class="ci-icon">🎧</span>
+          <div class="ci-text">
+            <strong>NARRATION</strong>
+            CM・企業PR・ドキュメンタリー等のナレーション
+          </div>
+        </li>
+        <li>
+          <span class="ci-icon">🎤</span>
+          <div class="ci-text">
+            <strong>MC / EVENT</strong>
+            式典・表彰式・スポーツイベント等の司会進行
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-name">四家 秀治 — YOTSUYA HIDEHARU</div>
+  <div class="footer-copy">© 2026 Yotsuya Hideharu. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
